@@ -1,0 +1,13 @@
+<div class="container">
+    <h1>이곳에 모든 게시글이 나타납니다.</h1><hr>
+    <% @tangsooyook.each do |p| %>
+    글 번호: <%= p.id %><br>
+    제목: <%= p.title %><br>
+    내용: <%= p.content %><br>
+    작성일자: <%= p.created_at.in_time_zone("Seoul").to_date %><br>
+    <a href="/update/<%= p.id %>">[수정]</a>
+    <a href="/destroy/<%= p.id %>">[삭제]</a>
+    <hr>
+    <% end %>
+    <br><a href="/">글쓰기로 돌아가기</a>
+</div>
